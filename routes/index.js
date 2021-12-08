@@ -1,21 +1,17 @@
 var express = require('express');
 var router = express.Router();
-var Message=require('../models/message');
+const messageController = require('../controllers/messageController');
 
-router.get('/', function(req, res, next) {
+// redirect to /messages
+router.get('/', messageController.redirect_message);
 
-  Message.find().sort({date:-1})
-  .then((data)=>{
-    console.log(data);
-    res.render('index', { title: 'Messaging board', messages :data});
-  })
+// displaying messages
+router.get('/messages', messageController.get_messages);
 
-  // error handling
-  .catch((err)=>{
-    
-    next();
-  })
+// requesting for message create form
+router.get('/create_message', messageController.get_message_form);
 
-});
+// posting data to database
+router.post('/messages', messageController.post_message);
 
 module.exports = router;

@@ -8,22 +8,21 @@
     <title>Create new Message</title>
 </head>
 <body>
-    <div class="form-page">
-        
-        <h1>Create New Message</h1>
-        <form method="POST" action="/new" class="form" onsubmit="return checkInput()">
-            <div>
-                <label>Enter user name</label>
-                <input type="text" name="username" id="username" placeholder="enter user name">
-            </div>
-            <div>
-                <label for="message">Enter message</label>
-                <textarea rows="5"  type="text" name="message" id="message" placeholder="Enter message" > </textarea>
-            </div>
-            <button type="submit">Submit</button>
-        </form>
-        <a href="/"><button>Back</button></a>
-    </div>
-    <script src="/javascripts/front.js"></script>
+	<div class="form-page">
+		<h1>Create New Message</h1>
+		<form method="POST" action="/messages" class="form" onsubmit="return checkInput()">
+			<div>
+				<label>Enter user name</label>
+				<input type="text" name="username" id="username" placeholder="enter user name">
+			</div>
+			<div>
+				<label for="message">Enter message</label>
+				<textarea rows="5"  type="text" name="message" id="message" placeholder="Enter message" > </textarea>
+			</div>
+			<button type="submit">Submit</button>
+		</form>
+		<a href="/messages"><button>Back</button></a>
+	</div>
+	<script src="/javascripts/front.js"></script>
 </body>
 </html>
